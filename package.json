@@ -1,7 +1,7 @@
 {
   "name": "ab-positive",
   "version": "0.0.2",
-  "description": "Lightweight A/B testing React component",
+  "description": "A lightweight, approachable A/B testing component for React.",
   "main": "./dist/index.js",
   "scripts": {
     "build": "babel --no-babelrc --presets=react,es2015,stage-0 --plugins=transform-decorators-legacy ./src --out-dir ./dist"
