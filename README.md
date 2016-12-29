@@ -1,9 +1,9 @@
 # AB+
 A lightweight, approachable A/B testing component for React.
 
-The goal of this component is to provide a flexible barebones split testing setup for your React components. AB+ exposes key callbacks for handling experiments and reporting on variants.
+The goal of this component is to provide a flexible barebones split testing setup for your React components with minimal implementation overhead. AB+ exposes key callbacks for handling experiments and reporting on variants, which works great for transmitting analytics events and performing further rendering operations.
 
-Please note: this project is a work-in-progress. Help is greatly welcomed!
+*Please note: this project is a work-in-progress. Help is greatly welcomed!*
 
 ## Installation
 
