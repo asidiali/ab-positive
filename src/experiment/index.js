@@ -18,9 +18,9 @@ export default class Experiment extends React.Component {
       console.log('current variant exists');
       console.log(currentVariant);
       const variant = self.props.children ? (
-        self.props.children.filter((child) => child.props.variantName === currentVariant)
+        self.props.children.filter((child) => child.props.name === currentVariant)
       ) : (
-        self.props.variants.filter((child) => child.props.variantName === currentVariant)
+        self.props.variants.filter((child) => child.props.name === currentVariant)
       );
       console.log(variant);
       return React.cloneElement(
@@ -38,7 +38,7 @@ export default class Experiment extends React.Component {
     console.log('selecting new variant');
     const variantIndex = self.props.children ? self.pickVariant(self.props.children.length) : self.pickVariant(self.props.variants.length);
     const variant = self.props.children ? self.props.children[variantIndex] : self.props.variants[variantIndex];
-    const variantName = variant.props.variantName;
+    const variantName = variant.props.name;
     if (!variantName) return false;
     ls.set(`experiment_${this.props.name}`, variantName);
     return React.cloneElement(

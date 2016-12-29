@@ -47,9 +47,9 @@ var Experiment = function (_React$Component) {
         console.log('current variant exists');
         console.log(currentVariant);
         var _variant = self.props.children ? self.props.children.filter(function (child) {
-          return child.props.variantName === currentVariant;
+          return child.props.name === currentVariant;
         }) : self.props.variants.filter(function (child) {
-          return child.props.variantName === currentVariant;
+          return child.props.name === currentVariant;
         });
         console.log(_variant);
         return _react2.default.cloneElement(_variant[0], Object.assign({}, self.props.variantProps, {
@@ -60,7 +60,7 @@ var Experiment = function (_React$Component) {
       console.log('selecting new variant');
       var variantIndex = self.props.children ? self.pickVariant(self.props.children.length) : self.pickVariant(self.props.variants.length);
       var variant = self.props.children ? self.props.children[variantIndex] : self.props.variants[variantIndex];
-      var variantName = variant.props.variantName;
+      var variantName = variant.props.name;
       if (!variantName) return false;
       _localStorage2.default.set('experiment_' + _this.props.name, variantName);
       return _react2.default.cloneElement(variant, Object.assign({}, self.props.variantProps, {

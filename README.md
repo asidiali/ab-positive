@@ -23,8 +23,8 @@ import { Experiment, Variant } from 'ab-positive';
     // do something after variant is chosen
   }}
 />
-  <Variant variantName="plain" component={BannerA} />
-  <Variant variantName="bold" component={BannerB} />
+  <Variant name="plain" component={BannerA} />
+  <Variant name="bold" component={BannerB} />
 </Experiment>
 ```
 
