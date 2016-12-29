@@ -3,17 +3,24 @@ A lightweight, approachable A/B testing component for React.
 
 ## Installation
 
+##### Via NPM
+`npm install --save ab-positive`
+
 ## Usage
 
-**Example Usage:**
+##### Example Usage
 ```
+import React from 'react';
+import { BannerA, BannerB } from '../components';
+import { Experiment, Variant } from 'ab-positive';
+
 <Experiment
   name="type_of_experiment"
   variantProps={{
-    color: '#444',
+    color: '#444', // gets passed into all variants
   }}
   onVariantLoad={(variantName) => {
-    // after variant is chosen
+    // do something after variant is chosen
   }}
 />
   <Variant variantName="plain" component={BannerA} />
