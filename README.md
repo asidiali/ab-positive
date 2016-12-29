@@ -3,12 +3,14 @@ A lightweight, approachable A/B testing component for React.
 
 The goal of this component is to provide a flexible barebones split testing setup for your React components with minimal implementation overhead. AB+ exposes key callbacks for handling experiments and reporting on variants, which can be used for things like transmitting analytics events and performing further rendering operations.
 
-*Please note: this project is a work-in-progress. Help is greatly welcomed!*
+*Please note: this project is a work-in-progress. Contribution is welcomed!*
 
 ## Installation
 
 ##### Via NPM
-`npm install --save ab-positive`
+```
+npm install --save ab-positive
+```
 
 ## Usage
 
