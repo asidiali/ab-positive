@@ -1,47 +1,34 @@
 {
-  "name": "react-es7-starter",
-  "version": "0.1.0",
-  "description": "A boilerplate front-end using React, ES7 & Webpack",
-  "main": "./src/core/app.js",
+  "name": "ab-positive",
+  "version": "0.0.2",
+  "description": "Lightweight A/B testing React component",
+  "main": "./dist/index.js",
   "scripts": {
-    "dev": "node_modules/.bin/webpack-dev-server",
-    "build": "webpack"
+    "build": "babel --no-babelrc --presets=react,es2015,stage-0 --plugins=transform-decorators-legacy ./src --out-dir ./dist"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/asidiali/react-es7-starter.git"
+    "url": "https://github.com/asidiali/ab-positive.git"
   },
-  "author": "adamsidiali",
+  "author": "asidiali",
   "license": "GPL",
   "bugs": {
-    "url": "https://github.com/asidiali/react-es7-starter/issues"
+    "url": "https://github.com/asidiali/ab-positive/issues"
   },
-  "homepage": "https://github.com/asidiali/react-es7-starter#readme",
+  "homepage": "https://github.com/asidiali/ab-positive#readme",
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
-    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-airbnb": "^2.1.1",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-0": "^6.16.0",
-    "json-loader": "^0.5.4",
-    "react-hot-loader": "^3.0.0-beta.5",
-    "webpack-dev-server": "^1.16.2"
+    "babel-preset-stage-0": "^6.16.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.16.0",
-    "eslint": "^3.7.1",
-    "eslint-config-airbnb": "^12.0.0",
-    "eslint-plugin-import": "^2.0.0",
-    "eslint-plugin-jsx-a11y": "^2.2.2",
-    "eslint-plugin-react": "^6.3.0",
-    "html-webpack-plugin": "^2.22.0",
-    "radium": "^0.18.1",
+    "local-storage": "^1.4.2",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-router": "^2.8.1",
-    "react-tap-event-plugin": "^1.0.0",
-    "webpack": "^1.13.2"
+    "react-dom": "^15.3.2"
   }
 }
