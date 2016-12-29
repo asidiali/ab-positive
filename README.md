@@ -1,7 +1,9 @@
 # AB+
 A lightweight, approachable A/B testing component for React.
 
-The goal of this component is to provide a flexible barebones split testing setup that provides a simple layer to build on top of. One `onVariantLoad` callback is exposed once the chosen variant has loaded, which is the perfect time for transmitting analytics events or performing any further rendering procedures.
+The goal of this component is to provide a flexible barebones split testing setup for your React components. AB+ exposes key callbacks for handling experiments and reporting on variants.
+
+Please note: this project is a work-in-progress. Help is greatly welcomed!
 
 ## Installation
 
