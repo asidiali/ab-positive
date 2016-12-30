@@ -34,8 +34,7 @@ You can use as many variants within an experiment as desired.
 
 | prop (*required)   | type |  description |
 |--------|-----------|------|-------------|
-| `name`* | String |  a name for the experiment being run
-
+| `name`* | String |  a name for the experiment being run |
 
 ### `Variant`
 
@@ -44,7 +43,7 @@ A variant provides a wrapped instance of your component which allows for props t
 | prop (*required)   | type |  description |
 |--------|-----------|------|-------------|
 | `name`* | String | a name for the variant |
-| `component`* | React component | the component to load within the variant
+| `component`* | React component | the component to load within the variant |
 
 # Troubleshooting
 
