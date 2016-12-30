@@ -3,32 +3,24 @@ A lightweight, approachable A/B testing component for React.
 
 The goal of this component is to provide a flexible barebones split testing setup for your React components with minimal implementation overhead. AB+ exposes key callbacks for handling experiments and reporting on variants, which can be used for things like transmitting analytics events and performing further rendering operations.
 
-*Please note: this project is a work-in-progress. Contribution is welcomed!*
+*Please note: this project is a work-in-progress. Feedback & contribution is greatly welcomed!*
 
 ## Installation
 
-##### Via NPM
+##### Via NPM:
 ```
 npm install --save ab-positive
 ```
 
 ## Usage
 
-##### Example Usage
+##### Basic example usage:
 ```
 import React from 'react';
 import { BannerA, BannerB } from '../components';
 import { Experiment, Variant } from 'ab-positive';
 
-<Experiment
-  name="type_of_experiment"
-  variantProps={{
-    color: '#444', // gets passed into all variants
-  }}
-  onVariantLoad={(variantName) => {
-    // do something after variant is chosen
-  }}
-/>
+<Experiment name="homepage_banner" />
   <Variant name="plain" component={BannerA} />
   <Variant name="bold" component={BannerB} />
 </Experiment>
