@@ -1,6 +1,6 @@
 [![npm](https://img.shields.io/npm/v/ab-positive.svg)](https://npmjs.com/package/ab-positive)
 [![donwloads](https://img.shields.io/npm/dm/ab-positive.svg)](https://npmjs.com/package/ab-positive)
-[![issues](https://img.shields.io/github/issues/badges/shields.svg)](https://github.com/asidiali/ab-positive/issues)
+[![issues](https://img.shields.io/github/issues/asidiali/ab-positive.svg)](https://github.com/asidiali/ab-positive/issues)
 [![license](https://img.shields.io/github/license/asidiali/ab-positive.svg)](https://github.com/asidiali/ab-positive/blob/master/LICENSE.md)
 
 # AB+
