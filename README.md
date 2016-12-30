@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/ab-positive.svg)](https://npmjs.com/package/ab-positive)
+
 # AB+
 A lightweight, flexible A/B testing component for React.
 
