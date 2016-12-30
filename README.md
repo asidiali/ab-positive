@@ -5,16 +5,16 @@ The goal of this component is to provide a flexible barebones split testing setu
 
 *Please note: this project is a work-in-progress. Feedback & contribution is greatly welcomed!*
 
-## Installation
+# Installation
 
-##### Via NPM:
+##### Via NPM
 ```
 npm install --save ab-positive
 ```
 
-## Usage
+# Usage
 
-##### Basic example usage:
+##### Basic example usage
 ```
 import React from 'react';
 import { BannerA, BannerB } from '../components';
@@ -26,7 +26,7 @@ import { Experiment, Variant } from 'ab-positive';
 </Experiment>
 ```
 
-#### - `Experiment`
+### `Experiment`
 
 An experiment manages a set of variants and dictates which variant is ultimately rendered.
 
@@ -37,7 +37,7 @@ You can use as many variants within an experiment as desired.
 | `name`* | String |  a name for the experiment being run
 
 
-#### - `Variant`
+### `Variant`
 
 A variant provides a wrapped instance of your component which allows for props to be injected.
 
@@ -46,11 +46,10 @@ A variant provides a wrapped instance of your component which allows for props t
 | `name`* | String | a name for the variant |
 | `component`* | React component | the component to load within the variant
 
----
-## Troubleshooting
+# Troubleshooting
 
-## License
+# License
 MIT [[LICENSE.md](https://github.com/asidiali/ab-positive/blob/master/LICENSE.md)]
 
-## Contributors
+# Contributors
 - Adam Sidiali [[Gh](http://github.com/asidiali)] [[Tw](http://twitter.com/adamsidiali)]
