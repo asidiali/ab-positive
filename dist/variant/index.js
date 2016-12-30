@@ -31,7 +31,7 @@ var Variant = function (_React$Component) {
   _createClass(Variant, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      if (this.props.onVariantLoad) this.props.onVariantLoad(this.props.variantName);
+      if (this.props.onVariantLoad) this.props.onVariantLoad(this.props.name);
     }
   }, {
     key: 'render',
