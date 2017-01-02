@@ -1,3 +1,4 @@
+[![status](https://travis-ci.org/asidiali/ab-positive.svg?branch=master)](https://travis-ci.org/asidiali/ab-positive)
 [![npm](https://img.shields.io/npm/v/ab-positive.svg)](https://npmjs.com/package/ab-positive)
 [![donwloads](https://img.shields.io/npm/dm/ab-positive.svg)](https://npmjs.com/package/ab-positive)
 [![issues](https://img.shields.io/github/issues/asidiali/ab-positive.svg)](https://github.com/asidiali/ab-positive/issues)
