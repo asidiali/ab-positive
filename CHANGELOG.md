@@ -1,5 +1,9 @@
 # Changelog
 
+### v0.0.7
+
+- Added basic tests
+
 ### v0.0.6
 
-- Fixed bug in `pickVariant` regarding undefined variant being returned
+- Fixed bug in `pickVariant` method regarding undefined variant being returned

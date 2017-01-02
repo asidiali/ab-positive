@@ -39,7 +39,7 @@ var Variant = (_temp = _class = function (_React$Component) {
     key: 'render',
     value: function render() {
       if (!this.props.name || !this.props.component) throw new Error('Missing required properties for Variant component');
-      return _react2.default.createElement(this.props.component, this.props);
+      return _react2.default.cloneElement(this.props.component, this.props);
     }
   }]);
 
