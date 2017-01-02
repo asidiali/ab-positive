@@ -20,7 +20,7 @@ export default class Experiment extends React.Component {
     }
     // no current variant for experient
     // selecting new variant
-    const variantIndex = variantArr.generateRandomIndex(variantArr.length);
+    const variantIndex = this.generateRandomIndex(variantArr.length);
     const variant = variantArr[variantIndex];
     const variantName = variant.props.name;
     if (!variantName) {

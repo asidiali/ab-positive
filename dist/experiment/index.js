@@ -51,7 +51,7 @@ var Experiment = function (_React$Component) {
       }
       // no current variant for experient
       // selecting new variant
-      var variantIndex = variantArr.generateRandomIndex(variantArr.length);
+      var variantIndex = _this.generateRandomIndex(variantArr.length);
       var variant = variantArr[variantIndex];
       var variantName = variant.props.name;
       if (!variantName) {
@@ -64,8 +64,7 @@ var Experiment = function (_React$Component) {
     }, _this.renderVariant = function () {
       var self = _this;
       if (!self.props.children && !self.props.variants) {
-        console.error('Error: Experiment component requires minimum 1 child `variant`, or `variants` property passed an array of `variant` components.');
-        return false;
+        throw new Error('Experiment component requires minimum 1 child `variant`, or `variants` property passed an array of `variant` components.');
       }
 
       var variant = self.pickVariant();

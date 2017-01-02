@@ -7,6 +7,8 @@ exports.default = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _class, _temp;
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -19,7 +21,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Variant = function (_React$Component) {
+var Variant = (_temp = _class = function (_React$Component) {
   _inherits(Variant, _React$Component);
 
   function Variant() {
@@ -36,11 +38,15 @@ var Variant = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      if (!this.props.name || !this.props.component) throw new Error('Missing required properties for Variant component');
       return _react2.default.createElement(this.props.component, this.props);
     }
   }]);
 
   return Variant;
-}(_react2.default.Component);
-
+}(_react2.default.Component), _class.propTypes = {
+  component: _react.PropTypes.node.isRequired,
+  name: _react.PropTypes.string.isRequired,
+  onVariantLoad: _react.PropTypes.func
+}, _temp);
 exports.default = Variant;
