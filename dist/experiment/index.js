@@ -37,32 +37,38 @@ var Experiment = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Experiment.__proto__ || Object.getPrototypeOf(Experiment)).call.apply(_ref, [this].concat(args))), _this), _this.pickVariant = function (max) {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Experiment.__proto__ || Object.getPrototypeOf(Experiment)).call.apply(_ref, [this].concat(args))), _this), _this.generateRandomIndex = function (max) {
       return Math.floor(Math.random() * max);
-    }, _this.loadVariant = function () {
+    }, _this.pickVariant = function () {
       var self = _this;
-      if (!self.props.children && !self.props.variants) return false;
-      var currentVariant = (0, _localStorage2.default)('experiment_' + _this.props.name);
-      if (currentVariant) {
-        console.log('current variant exists');
-        console.log(currentVariant);
-        var _variant = self.props.children ? self.props.children.filter(function (child) {
-          return child.props.name === currentVariant;
-        }) : self.props.variants.filter(function (child) {
-          return child.props.name === currentVariant;
-        });
-        console.log(_variant);
-        return _react2.default.cloneElement(_variant[0], Object.assign({}, self.props.variantProps, {
-          component: _variant[0].props.component,
-          onVariantLoad: self.props.onVariantLoad ? self.props.onVariantLoad : false
-        }) || {});
-      }
-      console.log('selecting new variant');
-      var variantIndex = self.props.children ? self.pickVariant(self.props.children.length) : self.pickVariant(self.props.variants.length);
+      var currentVariant = (0, _localStorage2.default)('experiment_' + self.props.name);
+      if (currentVariant) return currentVariant;
+      // no current variant for experient
+      // selecting new variant
+      var variantIndex = self.props.children ? self.generateRandomIndex(self.props.children.length) : self.generateRandomIndex(self.props.variants.length);
       var variant = self.props.children ? self.props.children[variantIndex] : self.props.variants[variantIndex];
       var variantName = variant.props.name;
-      if (!variantName) return false;
+      if (!variantName) {
+        return {
+          error: 'Error: Variant component requires `name` property.'
+        };
+      }
       _localStorage2.default.set('experiment_' + _this.props.name, variantName);
+      return variant;
+    }, _this.renderVariant = function () {
+      var self = _this;
+      if (!self.props.children && !self.props.variants) {
+        console.error('Error: Experiment component requires minimum 1 child `variant`, or `variants` property passed an array of `variant` components.');
+        return false;
+      }
+
+      var variant = self.pickVariant();
+
+      if (variant.error) {
+        console.error(variant.error);
+        return false;
+      }
+
       return _react2.default.cloneElement(variant, Object.assign({}, self.props.variantProps, {
         component: variant.props.component,
         onVariantLoad: self.props.onVariantLoad ? self.props.onVariantLoad : false
@@ -78,7 +84,7 @@ var Experiment = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return this.loadVariant();
+      return this.renderVariant();
     }
   }]);
 
