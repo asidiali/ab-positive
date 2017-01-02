@@ -41,12 +41,18 @@ var Experiment = function (_React$Component) {
       return Math.floor(Math.random() * max);
     }, _this.pickVariant = function () {
       var self = _this;
+      var variantArr = self.props.children ? self.props.children : self.props.variants;
       var currentVariant = (0, _localStorage2.default)('experiment_' + self.props.name);
-      if (currentVariant) return currentVariant;
+      if (currentVariant) {
+        var _variant = variantArr.filter(function (child) {
+          return child.props.name === currentVariant;
+        });
+        return _variant;
+      }
       // no current variant for experient
       // selecting new variant
-      var variantIndex = self.props.children ? self.generateRandomIndex(self.props.children.length) : self.generateRandomIndex(self.props.variants.length);
-      var variant = self.props.children ? self.props.children[variantIndex] : self.props.variants[variantIndex];
+      var variantIndex = variantArr.generateRandomIndex(variantArr.length);
+      var variant = variantArr[variantIndex];
       var variantName = variant.props.name;
       if (!variantName) {
         return {
