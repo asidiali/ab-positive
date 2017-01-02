@@ -26,7 +26,9 @@ npm install --save ab-positive
 import React from 'react';
 import { BannerA, BannerB } from '../components';
 import { Experiment, Variant } from 'ab-positive';
-
+```
+...
+```
 <Experiment name="homepage_banner" />
   <Variant name="plain" component={BannerA} />
   <Variant name="bold" component={BannerB} />
@@ -53,6 +55,8 @@ A variant provides a wrapped instance of your component which allows for props t
 | `component`* | React component | the component to load within the variant |
 
 # Troubleshooting
+
+WIP
 
 # License
 MIT [[LICENSE.md](https://github.com/asidiali/ab-positive/blob/master/LICENSE.md)]
