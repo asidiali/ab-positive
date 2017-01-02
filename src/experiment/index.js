@@ -10,7 +10,7 @@ export default class Experiment extends React.Component {
 
   generateRandomIndex = max => Math.floor(Math.random() * max);
 
-  pickVariant =  => {
+  pickVariant = () => {
     const self = this;
     const currentVariant = ls(`experiment_${self.props.name}`);
     if (currentVariant) return currentVariant;
