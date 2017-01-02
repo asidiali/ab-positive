@@ -1,5 +1,9 @@
 # Changelog
 
+### v0.0.8
+
+- Re-published to NPM
+
 ### v0.0.7
 
 - Added basic tests

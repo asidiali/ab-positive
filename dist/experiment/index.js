@@ -51,7 +51,7 @@ var Experiment = function (_React$Component) {
       }
       // no current variant for experient
       // selecting new variant
-      var variantIndex = _this.generateRandomIndex(variantArr.length);
+      var variantIndex = self.generateRandomIndex(variantArr.length);
       var variant = variantArr[variantIndex];
       var variantName = variant.props.name;
       if (!variantName) {
@@ -59,7 +59,7 @@ var Experiment = function (_React$Component) {
           error: 'Error: Variant component requires `name` property.'
         };
       }
-      _localStorage2.default.set('experiment_' + _this.props.name, variantName);
+      _localStorage2.default.set('experiment_' + self.props.name, variantName);
       return variant;
     }, _this.renderVariant = function () {
       var self = _this;

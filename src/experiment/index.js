@@ -20,7 +20,7 @@ export default class Experiment extends React.Component {
     }
     // no current variant for experient
     // selecting new variant
-    const variantIndex = this.generateRandomIndex(variantArr.length);
+    const variantIndex = self.generateRandomIndex(variantArr.length);
     const variant = variantArr[variantIndex];
     const variantName = variant.props.name;
     if (!variantName) {
@@ -28,7 +28,7 @@ export default class Experiment extends React.Component {
         error: 'Error: Variant component requires `name` property.'
       };
     }
-    ls.set(`experiment_${this.props.name}`, variantName);
+    ls.set(`experiment_${self.props.name}`, variantName);
     return variant;
   }
 
