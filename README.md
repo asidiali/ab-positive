@@ -31,8 +31,8 @@ import { Experiment, Variant } from 'ab-positive';
 ...
 ```
 <Experiment name="homepage_banner" />
-  <Variant name="plain" component={BannerA} />
-  <Variant name="bold" component={BannerB} />
+  <Variant name="plain" component={<BannerA />} />
+  <Variant name="bold" component={<BannerB />} />
 </Experiment>
 ```
 
