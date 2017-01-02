@@ -45,7 +45,7 @@ var Variant = (_temp = _class = function (_React$Component) {
 
   return Variant;
 }(_react2.default.Component), _class.propTypes = {
-  component: _react.PropTypes.element.isRequired,
+  component: _react.PropTypes.func.isRequired,
   name: _react.PropTypes.string.isRequired,
   onVariantLoad: _react.PropTypes.func
 }, _temp);
