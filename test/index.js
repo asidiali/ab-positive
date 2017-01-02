@@ -1,9 +1,10 @@
-import ExperimentTests from '../src/experiment/tests';
+import Experiment from '../src/experiment/tests';
 
-const testSuites = [
-  ExperimentTests,
+const componentTests = [
+  { Experiment },
 ];
 
-testSuites.forEach((suite) => {
-  Object.keys(suite).forEach(test => describe(test, suite[test]));
+componentTests.forEach((component, index) => {
+  const componentName = Object.keys(component)[0];
+  Object.keys(component[componentName]).forEach(test => describe(componentName, () => it(test, component[componentName][test])));
 });
