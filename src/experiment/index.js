@@ -35,8 +35,7 @@ export default class Experiment extends React.Component {
   renderVariant = () => {
     const self = this;
     if (!self.props.children && !self.props.variants) {
-      console.error('Error: Experiment component requires minimum 1 child `variant`, or `variants` property passed an array of `variant` components.');
-      return false;
+      throw new Error('Experiment component requires minimum 1 child `variant`, or `variants` property passed an array of `variant` components.');
     }
 
     const variant = self.pickVariant();
