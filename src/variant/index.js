@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 export default class Variant extends React.Component {
 
   static propTypes = {
-    component: PropTypes.element.isRequired,
+    component: PropTypes.func.isRequired,
     name: PropTypes.string.isRequired,
     onVariantLoad: PropTypes.func,
   }
