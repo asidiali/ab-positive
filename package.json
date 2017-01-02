@@ -17,6 +17,13 @@
     "url": "https://github.com/asidiali/ab-positive/issues"
   },
   "homepage": "https://github.com/asidiali/ab-positive#readme",
+  "keywords": [
+    "react",
+    "a/b",
+    "split",
+    "test",
+    "experiment",
+  ],
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
