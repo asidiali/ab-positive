@@ -8,39 +8,40 @@ export default class Experiment extends React.Component {
     console.log(this.props.name);
   }
 
-  pickVariant = max => Math.floor(Math.random() * max);
+  generateRandomIndex = max => Math.floor(Math.random() * max);
 
-  loadVariant = () => {
+  pickVariant =  => {
     const self = this;
-    if (!self.props.children && !self.props.variants) return false;
-    const currentVariant = ls(`experiment_${this.props.name}`);
-    if (currentVariant) {
-      console.log('current variant exists');
-      console.log(currentVariant);
-      const variant = self.props.children ? (
-        self.props.children.filter((child) => child.props.name === currentVariant)
-      ) : (
-        self.props.variants.filter((child) => child.props.name === currentVariant)
-      );
-      console.log(variant);
-      return React.cloneElement(
-        variant[0],
-        Object.assign(
-          {},
-          self.props.variantProps,
-          {
-            component: variant[0].props.component,
-            onVariantLoad: self.props.onVariantLoad ? self.props.onVariantLoad : false,
-          }
-        ) || {}
-      );
-    }
-    console.log('selecting new variant');
-    const variantIndex = self.props.children ? self.pickVariant(self.props.children.length) : self.pickVariant(self.props.variants.length);
+    const currentVariant = ls(`experiment_${self.props.name}`);
+    if (currentVariant) return currentVariant;
+    // no current variant for experient
+    // selecting new variant
+    const variantIndex = self.props.children ? self.generateRandomIndex(self.props.children.length) : self.generateRandomIndex(self.props.variants.length);
     const variant = self.props.children ? self.props.children[variantIndex] : self.props.variants[variantIndex];
     const variantName = variant.props.name;
-    if (!variantName) return false;
+    if (!variantName) {
+      return {
+        error: 'Error: Variant component requires `name` property.'
+      };
+    }
     ls.set(`experiment_${this.props.name}`, variantName);
+    return variant;
+  }
+
+  renderVariant = () => {
+    const self = this;
+    if (!self.props.children && !self.props.variants) {
+      console.error('Error: Experiment component requires minimum 1 child `variant`, or `variants` property passed an array of `variant` components.');
+      return false;
+    }
+
+    const variant = self.pickVariant();
+
+    if (variant.error) {
+      console.error(variant.error);
+      return false;
+    }
+
     return React.cloneElement(
       variant,
       Object.assign(
@@ -55,6 +56,6 @@ export default class Experiment extends React.Component {
   }
 
   render() {
-    return this.loadVariant();
+    return this.renderVariant();
   }
 }
