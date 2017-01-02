@@ -55,6 +55,12 @@ A variant provides a wrapped instance of your component which allows for props t
 | `name`* | String | a name for the variant |
 | `component`* | React component | the component to load within the variant |
 
+# Testing
+
+```
+npm test
+```
+
 # Troubleshooting
 
 WIP
