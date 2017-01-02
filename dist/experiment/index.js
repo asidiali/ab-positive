@@ -47,7 +47,7 @@ var Experiment = function (_React$Component) {
         var _variant = variantArr.filter(function (child) {
           return child.props.name === currentVariant;
         });
-        return _variant;
+        return _variant[0];
       }
       // no current variant for experient
       // selecting new variant
@@ -60,6 +60,7 @@ var Experiment = function (_React$Component) {
         };
       }
       _localStorage2.default.set('experiment_' + self.props.name, variantName);
+      console.log(variant);
       return variant;
     }, _this.renderVariant = function () {
       var self = _this;
@@ -68,6 +69,9 @@ var Experiment = function (_React$Component) {
       }
 
       var variant = self.pickVariant();
+
+      console.log('VARIANT');
+      console.log(variant);
 
       if (variant.error) {
         console.error(variant.error);

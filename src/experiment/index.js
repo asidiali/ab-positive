@@ -16,7 +16,7 @@ export default class Experiment extends React.Component {
     const currentVariant = ls(`experiment_${self.props.name}`);
     if (currentVariant) {
       const variant = variantArr.filter((child) => child.props.name === currentVariant);
-      return variant;
+      return variant[0];
     }
     // no current variant for experient
     // selecting new variant
@@ -29,6 +29,7 @@ export default class Experiment extends React.Component {
       };
     }
     ls.set(`experiment_${self.props.name}`, variantName);
+    console.log(variant);
     return variant;
   }
 
@@ -39,6 +40,9 @@ export default class Experiment extends React.Component {
     }
 
     const variant = self.pickVariant();
+
+    console.log('VARIANT');
+    console.log(variant);
 
     if (variant.error) {
       console.error(variant.error);
