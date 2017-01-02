@@ -1,6 +1,6 @@
 {
   "name": "ab-positive",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A lightweight, approachable A/B testing component for React.",
   "main": "./dist/index.js",
   "scripts": {
