@@ -10,6 +10,11 @@ import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
 
 export default {
+  'requires name property': () => {
+    expect(() => {
+      shallow(<Experiment />);
+    }).to.throw(Error);
+  },
   'requires minimum 1 variant via child or property': () => {
     expect(() => {
       shallow(<Experiment />);

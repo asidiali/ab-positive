@@ -6,5 +6,5 @@ const componentTests = [
 
 componentTests.forEach((component, index) => {
   const componentName = Object.keys(component)[0];
-  Object.keys(component[componentName]).forEach(test => describe(componentName, () => it(test, component[componentName][test])));
+  describe(componentName, () => Object.keys(component[componentName]).forEach(test => it(test, component[componentName][test])));
 });
