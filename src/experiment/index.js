@@ -12,19 +12,16 @@ export default class Experiment extends React.Component {
 
   pickVariant = () => {
     const self = this;
+    const variantArr = self.props.children ? self.props.children : self.props.variants;
     const currentVariant = ls(`experiment_${self.props.name}`);
     if (currentVariant) {
-      const variant = self.props.children ? (
-        self.props.children.filter((child) => child.props.name === currentVariant)
-      ) : (
-        self.props.variants.filter((child) => child.props.name === currentVariant)
-      );
+      const variant = variantArr.filter((child) => child.props.name === currentVariant);
       return variant;
     }
     // no current variant for experient
     // selecting new variant
-    const variantIndex = self.props.children ? self.generateRandomIndex(self.props.children.length) : self.generateRandomIndex(self.props.variants.length);
-    const variant = self.props.children ? self.props.children[variantIndex] : self.props.variants[variantIndex];
+    const variantIndex = variantArr.generateRandomIndex(variantArr.length);
+    const variant = variantArr[variantIndex];
     const variantName = variant.props.name;
     if (!variantName) {
       return {
